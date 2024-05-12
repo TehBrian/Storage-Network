@@ -1,16 +1,19 @@
-# Simple Storage 
+# Simple Storage Network (Brian's Fork)
 
-[![](http://cf.way2muchnoise.eu/268495.svg)](https://minecraft.curseforge.com/projects/simple-storage-network) 
-[![](http://cf.way2muchnoise.eu/versions/268495.svg)](https://minecraft.curseforge.com/projects/simple-storage-network)
+A fork of [Lothrazar's fork](https://github.com/Lothrazar/Storage-Network) of [KidsDontPlay's Forge mod](https://github.com/KidsDontPlay/Storage-Network) for 1.12.2.
 
+## Why The Fork?
 
-Project page with releases:  https://www.curseforge.com/minecraft/mc-mods/simple-storage-network
+Simply put, Simple Storage Network's cables cause the client's performance to go to shit.
 
+Here's a comparison between performance looking at a cube of Applied Energistics 2's cables versus of Simple Storage Network's cables.
 
-[![Twitter Badge](https://img.shields.io/badge/contact-twitter-blue.svg)](https://twitter.com/lothrazar)
-[![Discord](https://img.shields.io/discord/749302798797242449.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/uWZ3jf56fV)
-[![links](https://img.shields.io/badge/more-links-ff69b4.svg)](https://allmylinks.com/lothrazar)
-[![Support](https://img.shields.io/badge/Patreon-Support-orange.svg?logo=Patreon)](https://www.patreon.com/Lothrazar)
+![cube of Applied Energistics 2 cables with FPS shown](ae2-cable-pf.png)
 
+![cube of Simple Storage Network cables with FPS shown](ssn-cable-pf.png)
 
-Forked from https://github.com/MrRiegel/Storage-Network
+Spot the difference? (Specifically, FPS at the top left, and the big red frame times at the bottom left.)
+
+The goal of this fork is to figure out *why* this is happening and then eliminate the cause.
+
+No promises that I'll be able to reach that goal. I'll try my darndest, though.
