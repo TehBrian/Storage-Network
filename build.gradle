@@ -87,14 +87,3 @@ processResources {
 }
 
 build.dependsOn signJar
-
-//build.finalizedBy copyJar
-
-task copyJar(type: Copy) {
-    from jar
-    into "${dist_folder}"
-}
-
-task cleanJar {
-    delete 'build/libs'
-}

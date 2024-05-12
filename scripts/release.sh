@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./gradlew cleanJar build
+./gradlew clean build
