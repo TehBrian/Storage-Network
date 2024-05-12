@@ -10,7 +10,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 version = "${mc_version}-${mod_version}"
-group= "mrriegel.storagenetwork"
+group = "mrriegel.storagenetwork"
 archivesBaseName = "SimpleStorageNetwork"
 
 sourceCompatibility = targetCompatibility = '1.8'
@@ -25,18 +25,18 @@ minecraft {
     makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     useDepAts = true
     replace '@FINGERPRINT@', project.findProperty('signSHA1')
-	replaceIn "StorageNetwork.java"
+    replaceIn "StorageNetwork.java"
     replace "@VERSION@", "${mod_version}"
 }
 
 task signJar(type: SignJar, dependsOn: reobfJar) {
 
-     // Skips if the keyStore property is missing.
+    // Skips if the keyStore property is missing.
     onlyIf {
         project.hasProperty('keyStore')
     }
 
-     // findProperty allows us to reference the property without it existing.
+    // findProperty allows us to reference the property without it existing.
     // Using project.propName would cause the script to fail validation if
     // the property did not exist.
     keyStore = project.findProperty('keyStore')
@@ -48,26 +48,25 @@ task signJar(type: SignJar, dependsOn: reobfJar) {
 }
 
 dependencies {
-   deobfCompile "mezz.jei:jei_${mc_version}:${jei_version}"
-   deobfCompile "fastworkbench:FastWorkbench:${mc_version}:${fb_version}"
+    deobfCompile "mezz.jei:jei_${mc_version}:${jei_version}"
+    deobfCompile "fastworkbench:FastWorkbench:${mc_version}:${fb_version}"
 
     // fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
 
-   deobfCompile  "vazkii.patchouli:Patchouli:${patchouli_version}"
-   deobfCompile "baubles:Baubles:1.12:${baubles_version}"
+    deobfCompile "vazkii.patchouli:Patchouli:${patchouli_version}"
+    deobfCompile "baubles:Baubles:1.12:${baubles_version}"
 //  optional:
-//   deobfCompile "compact-machines:compactmachines3-${mc_version}:${cm_version}:${cm_build}" 
+//   deobfCompile "compact-machines:compactmachines3-${mc_version}:${cm_version}:${cm_build}"
 }
 repositories {
-    maven { url "https://dvs1.progwml6.com/files/maven"    }
-  //  maven { url "https://modmaven.k-4u.nl"  }
-    maven { url "https://modmaven.dev/"  }
-    maven { url "https://maven.theillusivec4.top/"    }
+    maven { url "https://dvs1.progwml6.com/files/maven" }
+    maven { url "https://modmaven.dev/" }
+    maven { url "https://maven.theillusivec4.top/" }
     maven { url "https://maven.blamejared.com" }
     maven { url "https://maven.blamejared.com/vazkii" }
-    maven { url "https://minecraft.curseforge.com/api/maven/"    }
-    maven { url 'https://www.cursemaven.com'  }
-    maven {   url "https://maven.thiakil.com/"    } 
+    maven { url "https://minecraft.curseforge.com/api/maven/" }
+    maven { url 'https://www.cursemaven.com' }
+    maven { url "https://maven.thiakil.com/" }
 // ?? http://maven.thiakil.com/com/azanor/baubles/Baubles/
     // ?? https://files.minecraftforge.net/maven/
     //   maven {   url "https://tehnut.info/maven/"    } // 404s
@@ -79,7 +78,7 @@ processResources {
     inputs.property "mcversion", project.minecraft.version
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        expand 'version': project.version, 'mcversion': project.minecraft.version
     }
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
